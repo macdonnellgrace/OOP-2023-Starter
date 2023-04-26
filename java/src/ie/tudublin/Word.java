@@ -1,10 +1,14 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
 public class Word {
 
-    private String word;
-    // follows class
+    // array list 
+    public ArrayList<Follow> fields = new ArrayList<Follow>();
 
+    private String word;
+    // follows class 
 
     public String getWord() {
         return word;
