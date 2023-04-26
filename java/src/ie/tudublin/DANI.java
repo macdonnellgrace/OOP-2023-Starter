@@ -1,10 +1,7 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-
 import processing.core.PApplet;
-import processing.data.Table;
-import processing.data.TableRow;
 
 public class DANI extends PApplet {
 
@@ -28,6 +25,7 @@ public class DANI extends PApplet {
 
 			println(s[i]);
 
+			// for each word in the array
 			for (int j = 0; j < s.length; j++)
 			{
 				w = split(s[i], ' ');
@@ -35,10 +33,11 @@ public class DANI extends PApplet {
 				Follow f = new Follow(w[j], j);
 				follows.add(f);
 				println(f);
+
+				//follows.findFollow(w[j]);
 			}
-
+			
 		}
-
     }
 
     // find follow 
@@ -50,6 +49,12 @@ public class DANI extends PApplet {
 
     public String[] writeSonnet()
     {
+		for (int i = 0; i < 14; i++) {
+			// pick random word
+			sonnet[i] = "Empty";
+			print(sonnet[i]);
+			
+		}
         return null;
     }
 
@@ -60,7 +65,7 @@ public class DANI extends PApplet {
 	}
 
 	public void keyPressed() {
-
+		//writeSonnet();
 	}
 
 	float off = 0;
@@ -72,6 +77,12 @@ public class DANI extends PApplet {
 		noStroke();
 		textSize(20);
         textAlign(CENTER, CENTER);
-        
+
+		// prints for each line in the sonnet
+		for (int index = 0; index < 14; index++) {
+			//text(sonnet[index],width / 2, height / 4);
+			text("hello",width / 2, height / 4);
+		}
+
 	}
 }

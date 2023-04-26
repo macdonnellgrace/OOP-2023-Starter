@@ -22,8 +22,13 @@ public class Word {
     // find follow 
     public void findFollow(String str) {
 
+    for (Follow fields : fields) {
+        fields.toString();
+          }
+
     }
-    
+
+
 
     // string
     public String toString() {
