@@ -1,8 +1,5 @@
 package ie.tudublin;
-
 import java.util.ArrayList;
-
-import javax.management.monitor.CounterMonitor;
 
 import processing.core.PApplet;
 
@@ -25,9 +22,7 @@ public class DANI extends PApplet {
 		for (int i = 0; i < s.length; i++) {
 			s[i] = s[i].replaceAll("[^\\w\\s]",""); // Remove punction characters
 			s[i] = s[i].toLowerCase(); // Convert a string to lower case 
-
-			println(s[i]);
-
+			
 			// for each word in the array
 			for (int j = 0; j < s.length; j++)
 			{
@@ -37,8 +32,8 @@ public class DANI extends PApplet {
 				Follow f = new Follow(w[j], 0);
 				follows.add(f);
 
-				
-			}
+				f.toString();
+			}	
 			
 		}
     }
@@ -46,16 +41,20 @@ public class DANI extends PApplet {
     // find word 
     public void findWord(String str) {
 
-	int count = 0;
-
-	for (int i = 0; i < follows.size(); i++) {
+        for (int i = 0; i < follows.size(); i++) {
 			Follow f = follows.get(i);
 			
 			if (f.getWord() == str){
-				println("Found");
-				count++;
+				
+				f.setCount((f.getCount())+1);
+				return;
 			}
-		}	
+			else
+			{
+				Follow newWord = new Follow(str, 1);
+				follows.add(newWord);
+			} 
+		}
     }
 
 	// print model
@@ -64,8 +63,7 @@ public class DANI extends PApplet {
 			Follow f = follows.get(index);
 
 			println(f.getWord() + ":" + "(" + f.getCount() + ")");
-			// print (..... + follows(word) + .....)
-			
+			// print (..... + follows(word) + .....)	
 		}
 	}
 
@@ -86,6 +84,7 @@ public class DANI extends PApplet {
 		colorMode(HSB);
 		loadFile();
 		printModel();
+		//follows.toString();
        
 	}
 

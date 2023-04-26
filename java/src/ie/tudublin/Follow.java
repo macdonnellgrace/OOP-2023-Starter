@@ -31,6 +31,8 @@ public class Follow {
         this.count = count;
     }
 
+    
+
 
     // string
     public String toString() {
