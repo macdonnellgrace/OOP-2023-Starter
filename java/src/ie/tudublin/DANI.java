@@ -33,8 +33,8 @@ public class DANI extends PApplet {
 			{
 				w = split(s[i], ' ');
 			
-				int count = findWord(w[j]);
-				Follow f = new Follow(w[j], count);
+				//int count = findWord();
+				Follow f = new Follow(w[j], 0);
 				follows.add(f);
 
 				
@@ -43,8 +43,8 @@ public class DANI extends PApplet {
 		}
     }
 
-    // find follow 
-    public int findWord(String str) {
+    // find word 
+    public void findWord(String str) {
 
 	int count = 0;
 
@@ -55,11 +55,19 @@ public class DANI extends PApplet {
 				println("Found");
 				count++;
 			}
-
-		}
-		return count;
-
+		}	
     }
+
+	// print model
+	public void printModel(){
+		for (int index = 0; index < follows.size(); index++) {
+			Follow f = follows.get(index);
+
+			println(f.getWord() + ":" + "(" + f.getCount() + ")");
+			// print (..... + follows(word) + .....)
+			
+		}
+	}
 
     String[] sonnet;
 
@@ -77,6 +85,7 @@ public class DANI extends PApplet {
 	public void setup() {
 		colorMode(HSB);
 		loadFile();
+		printModel();
        
 	}
 
@@ -95,10 +104,11 @@ public class DANI extends PApplet {
         textAlign(CENTER, CENTER);
 
 		// prints for each line in the sonnet
-		for (int index = 0; index < 14; index++) {
+		//for (int index = 0; index < 14; index++) {
 			//text(sonnet[index],width / 2, height / 4);
-			text("hello",width / 2, height / 4);
-		}
+			
+		//}
+		text("hello",width / 2, height / 4);
 
 	}
 }
