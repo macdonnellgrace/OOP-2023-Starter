@@ -25,13 +25,18 @@ public class DANI extends PApplet {
 			s[i] = s[i].replaceAll("[^\\w\\s]",""); // Remove punction characters
 			s[i] = s[i].toLowerCase(); // Convert a string to lower case 
 
+			Follow f = new Follow(s[i], i);
+			follows.add(f);
 			println(s[i]);
 		}
+
+ 
 
     }
 
     // find follow 
     public void findWord(String str) {
+
 
     }
 
