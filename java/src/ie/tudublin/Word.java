@@ -22,13 +22,23 @@ public class Word {
     // find follow 
     public void findFollow(String str) {
 
-    for (Follow fields : fields) {
-        fields.toString();
-          }
+        for (int i = 0; i < fields.size(); i++) {
+			Follow f = fields.get(i);
+			
+			if (f.getWord() == str){
+				
+				f.setCount((f.getCount())+1);
+				return;
+			}
+			else
+			{
+				Follow newWord = new Follow(str, 1);
+				fields.add(newWord);
+			}
+		}
+
 
     }
-
-
 
     // string
     public String toString() {

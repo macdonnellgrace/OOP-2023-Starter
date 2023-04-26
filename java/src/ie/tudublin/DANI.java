@@ -1,6 +1,9 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
+
+import javax.management.monitor.CounterMonitor;
+
 import processing.core.PApplet;
 
 public class DANI extends PApplet {
@@ -30,18 +33,31 @@ public class DANI extends PApplet {
 			{
 				w = split(s[i], ' ');
 			
-				Follow f = new Follow(w[j], j);
+				int count = findWord(w[j]);
+				Follow f = new Follow(w[j], count);
 				follows.add(f);
-				println(f);
 
-				//follows.findFollow(w[j]);
+				
 			}
 			
 		}
     }
 
     // find follow 
-    public void findWord(String str) {
+    public int findWord(String str) {
+
+	int count = 0;
+
+	for (int i = 0; i < follows.size(); i++) {
+			Follow f = follows.get(i);
+			
+			if (f.getWord() == str){
+				println("Found");
+				count++;
+			}
+
+		}
+		return count;
 
     }
 
