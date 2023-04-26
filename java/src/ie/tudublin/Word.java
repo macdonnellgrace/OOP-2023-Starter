@@ -19,6 +19,12 @@ public class Word {
         this.word = word;
     }
 
+    // find follow 
+    public void findFollow(String str) {
+
+    }
+    
+
     // string
     public String toString() {
         return "Word ="  + " follows = " + word;

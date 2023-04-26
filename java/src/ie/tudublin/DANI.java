@@ -15,18 +15,24 @@ public class DANI extends PApplet {
 
 	// array list 
 	public ArrayList<Follow> follows = new ArrayList<Follow>();
-
 	
 	// load file
-	
 	public void loadFile()
     {
-        Table table = loadTable("small.txt", "tsv");
+		String[] s = loadStrings("small.txt"); // Load a text file into a String array
 
-		for (TableRow row:table.rows())
-		{
-			println(row);
+		for (int i = 0; i < s.length; i++) {
+			s[i] = s[i].replaceAll("[^\\w\\s]",""); // Remove punction characters
+			s[i] = s[i].toLowerCase(); // Convert a string to lower case 
+
+			println(s[i]);
 		}
+
+    }
+
+    // find follow 
+    public void findWord(String str) {
+
     }
 
     String[] sonnet;
