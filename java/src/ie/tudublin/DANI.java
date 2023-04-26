@@ -13,6 +13,10 @@ public class DANI extends PApplet {
 		//fullScreen(SPAN);
 	}
 
+	// load file
+	
+	
+
     String[] sonnet;
 
     public String[] writeSonnet()
